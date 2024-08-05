@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+<!--          Check product price-->
+  <t t-inherit="point_of_sale.Orderline" t-inherit-mode="extension">
+    <xpath expr="//span[hasclass('price')]" position="before">
+
+    </xpath>
+  </t>
+</templates>

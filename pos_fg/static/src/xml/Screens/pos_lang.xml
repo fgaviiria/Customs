@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+<!--            Language field to customers-->
+    <t t-inherit="point_of_sale.PartnerLine" t-inherit-mode="extension" owl="1">
+        <xpath expr="//tr/td[1]" position="after">
+                <td>
+                    <div>
+                        <t t-esc="props.partner.lang or ''" />
+                    </div>
+                </td>
+        </xpath>
+    </t>
+    <t t-inherit="point_of_sale.PartnerListScreen" t-inherit-mode="extension" owl="1">
+        <xpath expr="//thead/tr/th[1]" position="after">
+                <td>
+                    <th>Language</th>
+                </td>
+        </xpath>
+    </t>
+
+</templates>
