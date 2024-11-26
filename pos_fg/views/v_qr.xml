@@ -5,10 +5,14 @@
         <template id="template" inherit_id="account.report_invoice_document">
             <xpath expr="//div[@id='qrcode']" position="after">
                 <div id="qrcode">
-                    <t t-set="qr_code_url" t-value="o.generate_qr_code()"/>
-                        <p t-if="qr_code_url">
+<!--                    <t t-set="qr_code_url" t-value="o.generate_qr_code()"/>-->
+                        <p>
                             <strong class="text-center">Scan me with your banking app.</strong><br/><br/>
-                            <img class="border border-dark rounded" t-att-src="qr_code_url"/>
+                            <root>
+                                <img t-att-src="'/report/barcode/?barcode_type=%s&amp;value=%s&amp;width=%s&amp;height=%s' %
+                                ('QR', o.generate_qr_code(), 200, 200)"/>
+ <!--                                <img class="border border-dark rounded" t-att-src="qr_code_url"/>-->
+                            </root>
                         </p>
                 </div>
             </xpath>
